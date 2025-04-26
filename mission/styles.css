@@ -1,0 +1,49 @@
+/* General styles */
+body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #959595;
+}
+
+/* Typography */
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 32px;
+}
+
+h2 {
+    color: #006EB6;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
