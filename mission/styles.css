@@ -47,3 +47,12 @@ li {
     width: 150px;
     height: auto;
 }
+
+.dark {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark h2 {
+    color: rgb(79, 154, 207);
+}
