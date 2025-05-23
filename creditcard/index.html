@@ -22,21 +22,21 @@
           height="55px">
       </div>
       <label for="number">Card Number</label>
-      <input type="text" id="number" placeholder="1234 5678 9101 1020" length="16">
+      <input type="text" id="number" placeholder="1234 5678 9101 1020" maxlength="16" required>
       <div id="name-container">
         <label for="name">Card Holder</label>
-        <input type="text" id="name" placeholder="John Doe" />
+        <input type="text" id="name" placeholder="John Doe" required />
       </div>
       <div id="exp-container">
         <label for="exp">
           Expiration
         </label>
-        <input id="month" type="text" placeholder="MM" length="2">
-        <input id="year" type="text" placeholder="YY" length="2">
+        <input id="month" type="text" placeholder="MM" maxlength="2" required>
+        <input id="year" type="text" placeholder="YY" maxlength="2" required>
       </div>
       <div id="cvc-container">
         <label for="cvc"> CVC/CVV</label>
-        <input id="cvc" placeholder="XXX-X" type="text" min-length="3" max-length="4">
+        <input id="cvc" placeholder="XXX-X" type="text" minlength="3" maxlength="4" required>
       </div>
     </div>
     <div id="back-card">
