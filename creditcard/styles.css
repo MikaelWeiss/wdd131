@@ -1,0 +1,134 @@
+body {
+  padding: 60px 0;
+  text-transform: uppercase;
+}
+
+#container {
+  margin: auto;
+  width: 500px;
+  height: 290px;
+  position: relative;
+}
+
+input {
+  height: 30px;
+  padding: 0 10px;
+  margin: 0 0 25px;
+  box-sizing: border-box;
+}
+
+#front-card {
+  position: absolute;
+  background-color: #e5e5e5;
+  width: 390px;
+  height: 250px;
+  border-radius: 6px;
+  padding: 20px 30px 0;
+  box-sizing: border-box;
+}
+
+#back-card {
+  top: 40px;
+  right: 0;
+  z-index: -2;
+  position: absolute;
+  background-color: #e5e5e5;
+  width: 390px;
+  height: 250px;
+  border-radius: 6px;
+  padding: 20px 30px 0;
+  box-sizing: border-box;
+}
+
+#shadow {
+  position: absolute;
+  right: 0;
+  width: 284px;
+  height: 214px;
+  top: 36px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+#month {
+  width: 45% !important;
+}
+
+label {
+  display: block;
+  margin: 0 auto 7px;
+}
+
+#exp-container {
+  margin-left: 20px;
+  width: 32%;
+  display: inline-block;
+}
+
+#number,
+#name {
+  width: 100%;
+}
+
+#stripe {
+  width: 100%;
+  height: 55px;
+  background-color: #4b4b4b;
+  position: absolute;
+  right: 0;
+}
+
+#year {
+  width: 45%;
+  float: right;
+}
+
+#name-container {
+  width: 60%;
+  display: inline-block;
+}
+
+#cvc-container {
+  position: absolute;
+  width: 115px;
+  right: -120px;
+  bottom: -5px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+#cvc-container p {
+  font-size: 6px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  letter-spacing: .5px;
+}
+
+#image-container {
+  width: 100%;
+  position: relative;
+  height: 55px;
+  margin-bottom: 5px;
+  line-height: 55px;
+}
+
+#image-container img {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#cvc {
+  width: 63px;
+  margin-bottom: 0;
+}
+
+#submit-btn {
+  position: absolute;
+  bottom: -55px;
+  right: 0;
+  width: 78px;
+  border-radius: 8px;
+  height: 36px;
+  text-transform: uppercase;
+}
