@@ -7,7 +7,7 @@
     <meta name="description" content="Cool Pics">
     <meta name="author" content="Mikael Weiss">
     <link rel="stylesheet" href="coolpics.css">
-    <script src="coolpics.js"></script>
+    <script src="coolpics.js" defer></script>
 </head>
 <body>
     <header>
@@ -52,6 +52,10 @@
           <img src="norris.jpeg" alt="Norris">
         </figure>
       </section>
+      <dialog id="viewer">
+        <img src="norris.jpeg" alt="Norris" id="viewer-image">
+        <button id="close-viewer">X</button>
+      </dialog>
     </main>
     <footer>
         <p>©2023 Not a real site 😀</p>
