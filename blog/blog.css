@@ -20,6 +20,17 @@ main {
   grid-template-columns: 7fr 2fr;
 }
 
+/* Skip to main content */
+.skip-to-content a {
+  position: absolute;
+  top: -40px;
+  color: var(--red);
+}
+
+.skip-to-content a:focus {
+  top: 0px;
+}
+
 /* Header */
 header h1 {
   text-align: center;
