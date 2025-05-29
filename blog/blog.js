@@ -33,14 +33,14 @@ function renderArticles() {
     articleElement.innerHTML = `
       <div class="article-container">
         <div class="article-info">
-          <p>Date: ${article.date}</p>
-          <p>Ages: ${article.ages}</p>
-          <p>Genre: ${article.genre}</p>
-          <p>Stars: ${article.stars}</p>
+          <p class="article-date">${article.date}</p>
+          <p>${article.ages}</p>
+          <p>${article.genre}</p>
+          <p>${article.stars}</p>
         </div>
         <div class="article-image-and-content">
-          <h2>${article.title}</h2>
-          <img src="${article.imgSrc}" alt="${article.imgAlt}">
+          <h2 class="article-title">${article.title}</h2>
+          <img src="${article.imgSrc}" alt="${article.imgAlt}" class="article-image">
           <div class="article-content">
             <p>${article.description}</p>
           </div>
