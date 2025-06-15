@@ -159,3 +159,23 @@ button:hover {
     width: 100%;
   }
 }
+
+.participants {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+#add {
+  grid-column: 1 / -1;
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .participants {
+    grid-template-columns: 1fr;
+  }
+}
