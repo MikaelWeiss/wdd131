@@ -207,3 +207,10 @@ footer img {
     margin-left: 18px;
   }
 }
+
+@media (min-width: 960px) {
+  body {
+    max-width: 960px;
+    margin: auto;
+  }
+}
