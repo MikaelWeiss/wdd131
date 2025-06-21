@@ -23,19 +23,24 @@
 
 header {
   display: flex;
-  align-items: flex-end;
+  align-items: baseline;
+  justify-content: center;
   margin: 42px;
   margin-bottom: 60px;
+}
+
+header h1 {
+  line-height: 1;
+  margin-bottom: -0.2em;
 }
 
 h1 {
   font-family: var(--secondary-font);
   font-size: 3em;
-  margin-bottom: 0;
 }
 
 header img {
-  width: 100px;
+  width: 91px;
 }
 
 /* Body */
@@ -52,8 +57,8 @@ img {
 /* Search */
 
 .search-container {
-  margin-bottom: 24px;
-  margin-left: 24px;
+  margin-bottom: 21px;
+  margin-left: 23px;
   margin-right: 24px;
   display: flex;
   border: 2px solid #999;
@@ -61,8 +66,8 @@ img {
 }
 
 .search-container img {
-  width: 32px;
-  height: 28px;
+  width: 31px;
+  height: 31px;
   margin: 0;
   padding: 0;
 }
@@ -70,25 +75,30 @@ img {
 .search-container input {
   flex: 1;
   font-size: 1.2em;
-  padding: 4px 8px;
+  padding: 4px 4px;
   border: none;
   outline: none;
   background: transparent;
 }
 
 .search-container button {
-  padding: 2px 4px;
+  padding: 2px 6px;
   border: none;
   border-left: 2px solid #999;
   background: transparent;
   cursor: pointer;
 }
 
+.recipes {
+  margin-bottom: 44px;
+}
+
 .recipe {
   display: flex;
   flex-direction: column;
-  margin: 22px;
+  margin: 21px;
   padding: 22px;
+  padding-bottom: 40px;
   border: 2px solid #999;
   border-radius: 7px;
 }
@@ -96,9 +106,9 @@ img {
 .tag {
   display: inline-block;
   border: 2px solid #999;
-  padding: 5px;
-  margin: 5px 0;
-  font-size: 20px;
+  padding: 5px 11.5px;
+  margin: 5px 0px 10px 0px;
+  font-size: 21px;
   font-weight: 590;
 }
 
@@ -113,30 +123,51 @@ img {
   display: none;
 }
 
+.rating {
+  display: flex;
+}
+
+.icon-star {
+  font-size: 24px;
+}
+
+.icon-star-empty {
+  font-size: 22px;
+}
+
 /* Footer */
 
 footer {
   display: flex;
   flex-direction: column;
-  width: 100%;
   text-align: center;
+  margin-left: 21px;
+  margin-right: 21px;
 }
 
 footer img {
-  width: 32px;
-  height: 32px;
-  margin: 0 2px;
+  width: 52px;
+  height: 52px;
+}
+
+.social {
+  margin-bottom: 2px;
 }
 
 #flaticon-attribution-link {
-  font-size: 0.6em;
+  font-size: 0.8em;
   color: var(--primary-color);
   text-decoration: none;
+  letter-spacing: 0.009em;
 }
 
 /* Media Queries */
 
 @media (min-width: 600px) {
+  body {
+    margin: 19px;
+  }
+
   footer {
     display: flex;
     flex-direction: row;
@@ -154,10 +185,12 @@ footer img {
 
   .recipe {
     flex-direction: row;
+    padding-bottom: 22px;
+    padding-right: 42px;
   }
 
   .recipe img {
-    width: 40%;
+    width: 50%;
   }
 
   .recipe-description {
