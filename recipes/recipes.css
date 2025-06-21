@@ -154,6 +154,12 @@ footer img {
   margin-bottom: 2px;
 }
 
+.socail a {
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}
+
 #flaticon-attribution-link {
   font-size: 0.8em;
   color: var(--primary-color);
