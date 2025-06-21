@@ -1,13 +1,45 @@
+/* Global */
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+:root {
+--primary-color: #1B98E0;
+--secondary-color: #59c3c3;
+--text-dark: #333;
+--text-light: #ebebeb;
+--primary-font: Arial, Helvetica, sans-serif;
+  /* The closest font I could find to Amatic SC 
+  that I felt has a similar look and feel, 
+  but is better for accessibility was Quicksand */
+--secondary-font: "Quicksand", sans-serif;
+}
+
+* {
+  font-family: var(--primary-font)
+}
+
 /* Header */
 
 header {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  margin: 42px;
+  margin-bottom: 60px;
+}
+
+h1 {
+  font-family: var(--secondary-font);
+  font-size: 3em;
+  margin-bottom: 0;
 }
 
 header img {
   width: 100px;
+}
+
+/* Body */
+
+img {
+  width: 100%;
 }
 
 /* Search */
@@ -15,6 +47,10 @@ header img {
 .search-container {
   display: flex;
   justify-content: center;
+  margin-top: 0;
+  margin-bottom: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 .search-container img {
@@ -25,6 +61,7 @@ header img {
 
 .search-container input {
   width: 100%;
+  font-size: 1.2em;
 }
 
 /* Footer */
@@ -46,7 +83,7 @@ footer img {
   font-size: 0.6em;
 }
 
-@media (min-width: 300px) {
+@media (min-width: 600px) {
   footer {
     display: flex;
     flex-direction: row;
