@@ -57,13 +57,39 @@ function handleFormSubmit(e) {
     const time = form['meal-time'].value;
     const description = form['meal-description'].value.trim();
     
-    if (!title || !date || !time) {
-        showFormError('Please fill in all required fields.');
-        return;
+    // Enhanced conditional branching with multiple validation paths
+    let validationError = null;
+    
+    if (!title && !date && !time) {
+        validationError = 'All required fields are missing. Please fill in the meal title, date, and time.';
+    } else if (!title) {
+        validationError = 'Meal title is required. What did you eat?';
+    } else if (!date) {
+        validationError = 'Date is required. When did you eat this meal?';
+    } else if (!time) {
+        validationError = 'Time is required. What time did you eat?';
+    } else if (title.length < 2) {
+        validationError = 'Meal title must be at least 2 characters long.';
+    } else if (title.length > 100) {
+        validationError = 'Meal title is too long. Please keep it under 100 characters.';
+    } else if (description && description.length > 1000) {
+        validationError = 'Description is too long. Please keep it under 1000 characters.';
+    } else {
+        // Additional validation for date and time
+        const selectedDate = new Date(date);
+        const today = new Date();
+        const oneYearFromNow = new Date();
+        oneYearFromNow.setFullYear(today.getFullYear() + 1);
+        
+        if (selectedDate > oneYearFromNow) {
+            validationError = 'Date cannot be more than a year in the future.';
+        } else if (selectedDate < new Date('2020-01-01')) {
+            validationError = 'Date cannot be before January 1, 2020.';
+        }
     }
     
-    if (title.length < 2) {
-        showFormError('Meal title must be at least 2 characters long.');
+    if (validationError) {
+        showFormError(validationError);
         return;
     }
     
@@ -107,8 +133,12 @@ function handleSearch() {
 }
 
 function handleFilterClick(e) {
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+    });
     e.target.classList.add('active');
+    e.target.setAttribute('aria-pressed', 'true');
     
     const filterType = e.target.id.replace('filter-', '');
     const today = new Date().toISOString().split('T')[0];
@@ -134,11 +164,13 @@ function displayMeals(mealsToShow) {
     });
     
     const mealsList = document.getElementById('meals-list');
-    mealsList.innerHTML = '';
     
-    sorted.forEach(meal => {
-        mealsList.appendChild(createMealElement(meal));
-    });
+    // Use map() to create meal elements array
+    const mealElements = sorted.map(meal => createMealElement(meal));
+    
+    // Clear and append all elements
+    mealsList.innerHTML = '';
+    mealElements.forEach(element => mealsList.appendChild(element));
     
     updateNoMealsVisibility(mealsToShow.length === 0);
 }

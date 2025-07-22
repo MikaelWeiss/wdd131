@@ -21,7 +21,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <img src="images/logo.png" alt="Food Journal Logo" class="logo">
+                <img src="images/logo.png" alt="Food Journal Logo" class="logo" width="60" height="60">
                 <h1>Food Journal</h1>
                 <nav>
                     <a href="index.html" class="active">Home</a>
@@ -44,17 +44,36 @@
                 </div>
             </div>
             
-            <div class="filters">
-                <button id="filter-all" class="filter-btn active">All</button>
-                <button id="filter-today" class="filter-btn">Today</button>
-                <button id="filter-week" class="filter-btn">This Week</button>
+            <div class="filters" role="group" aria-label="Meal filters">
+                <button id="filter-all" class="filter-btn active" aria-pressed="true">All</button>
+                <button id="filter-today" class="filter-btn" aria-pressed="false">Today</button>
+                <button id="filter-week" class="filter-btn" aria-pressed="false">This Week</button>
             </div>
 
-            <div id="meals-list" class="meals-list">
+            <div id="meals-list" class="meals-list" role="list" aria-label="Your meals">
             </div>
 
-            <div id="no-meals" class="no-meals hidden">
+            <div id="no-meals" class="no-meals hidden" role="status" aria-live="polite">
                 <p>No meals found. Add your first meal above!</p>
+            </div>
+        </section>
+
+        <section class="home-inspiration">
+            <div class="inspiration-content">
+                <div class="image-container">
+                    <img src="images/food-journal.jpg" alt="Person writing in a food journal with coffee and croissant, representing healthy meal tracking habits" class="inspiration-image" width="300" height="200" loading="lazy">
+                    <div class="image-overlay">
+                        <a href="https://unsplash.com/photos/person-writing-on-a-book-fMD_Cru6OTk?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer" class="source-link">Source</a>
+                    </div>
+                </div>
+                <div class="inspiration-text">
+                    <blockquote>
+                        "Take care of your body. It's the only place you have to live."
+                        <cite>— Jim Rohn</cite>
+                    </blockquote>
+                    <p>Start your journey to better health by tracking what you eat. Every meal is a chance to nourish your body and mind.</p>
+                    <p class="image-attribution">Photo by <a href="https://unsplash.com/photos/person-writing-on-a-book-fMD_Cru6OTk?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+                </div>
             </div>
         </section>
     </main>
