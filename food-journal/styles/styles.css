@@ -28,17 +28,23 @@ body {
 
 .skip-link {
     position: absolute;
-    top: -40px;
-    left: 6px;
+    top: -100px;
+    left: -100px;
     background: var(--secondary-color);
     color: var(--accent-light);
     padding: 8px;
     text-decoration: none;
     z-index: 1000;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.3s ease;
 }
 
 .skip-link:focus {
     top: 6px;
+    left: 6px;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .container {
