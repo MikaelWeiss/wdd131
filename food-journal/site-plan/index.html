@@ -3,8 +3,15 @@
 <html lang="en-us">
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Site Plan</title>
-		<link type="text/css" rel="stylesheet" href="styles.css" />
+		
+		<!-- Preconnect to external domains -->
+		<link rel="preconnect" href="https://unsplash.com">
+		
+		<!-- Preload critical CSS -->
+		<link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript><link type="text/css" rel="stylesheet" href="styles.css" /></noscript>
 	</head>
 
 	<body>
@@ -12,7 +19,7 @@
 			<h1> Food Journal Site Plan</h1>
 			<h2>Mikael Weiss</h2>
 			<h2>WDD 131</h2>
-			<img src="../images/food-journal.jpg" alt="Person writing in a journal with coffee and croissant, representing food journaling" style="width: 100%; max-width: 400px; margin: 1rem 0; border-radius: 8px;">
+			<img src="../images/food-journal.jpg" alt="Person writing in a journal with coffee and croissant, representing food journaling" style="width: 100%; max-width: 400px; margin: 1rem 0; border-radius: 8px;" width="400" height="300" loading="eager" decoding="async">
 			<p style="text-align: center; font-size: 0.8rem; color: #666;">Photo by <a href="https://unsplash.com/photos/person-writing-on-a-book-fMD_Cru6OTk?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
 		</header>
 		<main>
@@ -31,7 +38,7 @@
 			<hr />
 			<h2>Branding</h2>
 			<h3>Website Logo</h3>
-			<img class="logo" src="images/logo.png" alt="Logo image" />
+			<img class="logo" src="images/logo.png" alt="Logo image" width="150" height="150" loading="lazy" decoding="async" />
 			<hr />
 			<h2>Style Guide</h2>
 
@@ -123,20 +130,20 @@
 			<p>
 				You can search through your meal entries.
 			</p>
-			<img src="images/home.png" alt="home page wireframe" style="width: 100%; max-width: 550px;"/>
+			<img src="images/home.png" alt="home page wireframe" style="width: 100%; max-width: 550px;" width="550" height="400" loading="lazy" decoding="async"/>
             
             <h3>Meal Details - Child Page</h3>
             <p>
                 This page will have details about the meal you click on.
             </p>
 
-            <img src="images/meal-details.png" alt="meal details page wireframe" style="width: 100%; max-width: 550px;"/>
+            <img src="images/meal-details.png" alt="meal details page wireframe" style="width: 100%; max-width: 550px;" width="550" height="400" loading="lazy" decoding="async"/>
 
 			<h3>About</h3>
 			<p>
 				This page will explain the purpose of the site and how to use it. 
 			</p>
-			<img src="images/about.png" alt="about page wireframe" style="width: 100%; max-width: 550px;"/>
+			<img src="images/about.png" alt="about page wireframe" style="width: 100%; max-width: 550px;" width="550" height="400" loading="lazy" decoding="async"/>
 		</main>
 	</body>
 </html>
