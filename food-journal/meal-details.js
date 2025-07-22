@@ -24,13 +24,36 @@ function init() {
 }
 
 function attachModalEventListeners() {
-    closeModalBtn.addEventListener('click', closeEditModal);
-    cancelBtn.addEventListener('click', closeEditModal);
-    modalOverlay.addEventListener('click', closeEditModal);
-    mealForm.addEventListener('submit', handleEditFormSubmit);
+    console.log('Attaching modal event listeners...');
+    console.log('closeModalBtn:', closeModalBtn);
+    console.log('cancelBtn:', cancelBtn);
+    console.log('modalOverlay:', modalOverlay);
+    
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', function(e) {
+            console.log('Close button clicked');
+            closeEditModal();
+        });
+    }
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', function(e) {
+            console.log('Cancel button clicked');
+            closeEditModal();
+        });
+    }
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', function(e) {
+            console.log('Overlay clicked');
+            closeEditModal();
+        });
+    }
+    if (mealForm) {
+        mealForm.addEventListener('submit', handleEditFormSubmit);
+    }
     
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && !editMealModal.classList.contains('hidden')) {
+        if (e.key === 'Escape' && editMealModal && !editMealModal.classList.contains('hidden')) {
+            console.log('Escape key pressed');
             closeEditModal();
         }
     });
