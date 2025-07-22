@@ -176,11 +176,11 @@ function displayMeals(mealsToShow) {
 }
 
 function createMealElement(meal) {
-    const div = document.createElement('div');
-    div.className = 'meal-item';
-    div.onclick = () => viewMeal(meal.id);
+    const li = document.createElement('li');
+    li.className = 'meal-item';
+    li.onclick = () => viewMeal(meal.id);
     
-    div.innerHTML = `
+    li.innerHTML = `
         <div class="meal-header">
             <h3 class="meal-title">${escapeHtml(meal.title)}</h3>
             <div class="meal-datetime">
@@ -196,7 +196,7 @@ function createMealElement(meal) {
         </div>
     `;
     
-    return div;
+    return li;
 }
 
 function viewMeal(mealId) {

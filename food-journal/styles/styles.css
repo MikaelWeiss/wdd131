@@ -415,6 +415,9 @@ footer p {
 .meals-list {
     display: grid;
     gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .meal-item {
