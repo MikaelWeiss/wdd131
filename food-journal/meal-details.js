@@ -59,39 +59,21 @@ function displayMealDetails(mealId) {
     
     mealDetailContent.innerHTML = `
         <div class="meal-detail-card">
-            <div class="meal-detail-header">
-                <h2 class="meal-detail-title">${escapeHtml(meal.title)}</h2>
-                <div class="meal-detail-meta">
-                    <div class="meta-item">
-                        <strong>Date:</strong> ${formattedDate}
-                    </div>
-                    <div class="meta-item">
-                        <strong>Time:</strong> ${formattedTime}
-                    </div>
-                    <div class="meta-item">
-                        <strong>Added:</strong> ${createdDate}
-                    </div>
+            <div class="meal-header">
+                <h2 class="meal-title">${escapeHtml(meal.title)}</h2>
+                <div class="meal-meta">
+                    <span class="meal-date">${formattedDate}</span>
+                    <span class="meal-time">${formattedTime}</span>
                 </div>
             </div>
             
-            <div class="meal-detail-body">
-                <h3>Description</h3>
-                <div class="meal-detail-description">
-                    ${meal.description ? escapeHtml(meal.description) : 'No description provided for this meal.'}
-                </div>
-                
-                <div class="meal-stats">
-                    <div class="stat-item">
-                        <span class="stat-label">Meal ID:</span>
-                        <span class="stat-value">#${meal.id.toString().slice(-6)}</span>
-                    </div>
-                </div>
+            <div class="meal-description">
+                ${meal.description ? escapeHtml(meal.description) : 'No description provided for this meal.'}
             </div>
             
-            <div class="meal-detail-actions">
-                <button class="btn btn-secondary" onclick="editMeal(${meal.id})">Edit Meal</button>
-                <button class="btn btn-danger" onclick="deleteMealFromDetails(${meal.id})">Delete Meal</button>
-                <button class="btn btn-primary" onclick="shareMeal(${meal.id})">Share Details</button>
+            <div class="meal-actions">
+                <button class="btn btn-secondary" onclick="editMeal(${meal.id})">Edit</button>
+                <button class="btn btn-danger" onclick="deleteMealFromDetails(${meal.id})">Delete</button>
             </div>
         </div>
     `;
@@ -224,27 +206,7 @@ function deleteMealFromDetails(mealId) {
     }
 }
 
-function shareMeal(mealId) {
-    const storedMeals = JSON.parse(localStorage.getItem('foodJournalMeals')) || [];
-    const meal = storedMeals.find(m => m.id == mealId);
-    
-    if (meal) {
-        const shareText = `I ate ${meal.title} on ${formatDate(meal.date)} at ${formatTime(meal.time)}`;
-        
-        if (navigator.share) {
-            navigator.share({
-                title: 'Food Journal Entry',
-                text: shareText
-            });
-        } else {
-            navigator.clipboard.writeText(shareText).then(() => {
-                alert('Meal details copied to clipboard!');
-            }).catch(() => {
-                alert(`Share: ${shareText}`);
-            });
-        }
-    }
-}
+
 
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -275,7 +237,6 @@ function escapeHtml(text) {
 
 window.editMeal = editMeal;
 window.deleteMealFromDetails = deleteMealFromDetails;
-window.shareMeal = shareMeal;
 window.viewRelatedMeal = viewRelatedMeal;
 
 document.addEventListener('DOMContentLoaded', init);
