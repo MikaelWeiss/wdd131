@@ -106,13 +106,13 @@
     text-align: center;
     padding: 3rem 2rem;
     background-color: var(--primary-color);
-    color: var(--accent-light);
+    color: var(--secondary-color);
     border-radius: 8px;
     margin: 3rem 0;
 }
 
 .about-cta h3 {
-    color: var(--accent-light);
+    color: var(--secondary-color);
     margin-bottom: 1rem;
 }
 
@@ -122,13 +122,13 @@
 }
 
 .about-cta .btn {
-    background-color: var(--accent-light);
+    background-color: var(--secondary-color);
     color: var(--primary-color);
 }
 
 .about-cta .btn:hover {
-    background-color: var(--secondary-color);
-    color: var(--accent-light);
+    background-color: var(--accent-light);
+    color: var(--secondary-color);
 }
 
 /* About Page Responsive Design */
