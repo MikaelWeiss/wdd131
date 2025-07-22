@@ -270,6 +270,7 @@ function showFormError(message) {
         errorDiv = document.createElement('div');
         errorDiv.className = 'form-error';
         errorDiv.style.cssText = 'color: var(--danger-color); padding: 0.5rem; margin-bottom: 1rem; border: 1px solid var(--danger-color); border-radius: 4px; background-color: #f8d7da;';
+        const mealForm = document.getElementById('meal-form');
         mealForm.insertBefore(errorDiv, mealForm.firstChild);
     }
     errorDiv.textContent = message;
