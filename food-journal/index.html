@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Journal</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@400;600;700&display=swap" rel="stylesheet">
     <meta name="description" content="A food journal website to help you track your meals and improve your health.">
     <meta name="author" content="Mikael Weiss">
@@ -18,6 +17,7 @@
     <script type="module" src="main.js"></script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <header>
         <div class="container">
             <div class="header-content">
@@ -31,15 +31,15 @@
         </div>
     </header>
 
-    <main class="container">
+    <main id="main" class="container">
         <section class="meals-section">
             <div class="meals-header">
                 <h2>Your Meals</h2>
                 <div class="header-actions">
                     <button id="add-meal-btn" class="btn btn-primary">Add Meal</button>
                     <div class="search-container">
-                        <input type="text" id="search-input" placeholder="Search meals...">
-                        <button id="search-btn" class="btn btn-secondary">🔍</button>
+                        <input type="text" id="search-input" placeholder="Search meals..." aria-label="Search meals">
+                        <button id="search-btn" class="btn btn-secondary" aria-label="Search meals">Search</button>
                     </div>
                 </div>
             </div>
@@ -70,24 +70,28 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="modal-title">Add New Meal</h2>
-                <button id="close-modal" class="close-btn">&times;</button>
+                <button id="close-modal" class="close-btn" aria-label="Close modal">&times;</button>
             </div>
             <form id="meal-form" class="meal-form">
                 <div class="form-group">
                     <label for="meal-title">Meal Title:</label>
-                    <input type="text" id="meal-title" name="meal-title" required>
+                    <input type="text" id="meal-title" name="meal-title" required aria-describedby="title-help">
+                    <small id="title-help">Enter the name of your meal or food item</small>
                 </div>
                 <div class="form-group">
                     <label for="meal-date">Date:</label>
-                    <input type="date" id="meal-date" name="meal-date" required>
+                    <input type="date" id="meal-date" name="meal-date" required aria-describedby="date-help">
+                    <small id="date-help">Select the date you had this meal</small>
                 </div>
                 <div class="form-group">
                     <label for="meal-time">Time:</label>
-                    <input type="time" id="meal-time" name="meal-time" required>
+                    <input type="time" id="meal-time" name="meal-time" required aria-describedby="time-help">
+                    <small id="time-help">Select the time you had this meal</small>
                 </div>
                 <div class="form-group">
                     <label for="meal-description">Description:</label>
-                    <textarea id="meal-description" name="meal-description" rows="3" placeholder="What did you eat? How did you feel?"></textarea>
+                    <textarea id="meal-description" name="meal-description" rows="3" placeholder="What did you eat? How did you feel?" aria-describedby="desc-help"></textarea>
+                    <small id="desc-help">Optional: Describe your meal and how you felt afterward</small>
                 </div>
                 <div class="modal-actions">
                     <button type="button" id="cancel-btn" class="btn btn-secondary">Cancel</button>

@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Details - Food Journal</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/meal-details.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@400;600;700&display=swap" rel="stylesheet">
     <meta name="description" content="Meal details page for the Food Journal website">
     <meta name="author" content="Mikael Weiss">
     <meta property="og:title" content="Food Journal">
     <meta property="og:description" content="Meal details page for the Food Journal website">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mikaelweiss.github.io/wdd131/food-journal/index.html">
+    <meta property="og:url" content="https://mikaelweiss.github.io/wdd131/food-journal/meal-details.html">
     <meta property="og:image" content="https://mikaelweiss.github.io/wdd131/food-journal/images/logo.png">
     <link rel="icon" type="image/png" href="images/logo.png">
     <script type="module" src="meal-details.js"></script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <header>
         <div class="container">
             <div class="header-content">
-                <img src="images/logo.png" alt="Food Journal Logo" class="logo">
+                <img src="images/logo.png" alt="Food Journal Logo" class="logo" width="60" height="60">
                 <h1>Food Journal</h1>
                 <nav>
                     <a href="index.html">Home</a>
@@ -31,7 +33,7 @@
         </div>
     </header>
 
-    <main class="container">
+    <main id="main" class="container">
         <section class="meal-detail-section">
             <div class="detail-header">
                 <a href="index.html" class="back-btn">&larr; Back to Meals</a>
@@ -42,7 +44,10 @@
             </div>
 
             <div id="no-meal-selected" class="no-meal-selected hidden">
-                <img src="images/meal-details.png" alt="Meal details illustration" class="detail-image">
+                <div class="image-container">
+                    <img src="images/no-meal-selected.jpg" alt="Empty plate with fork and knife showing a sad face, representing no meal selected" class="detail-image" width="300" height="200" loading="lazy">
+                    <p class="image-attribution">Photo by <a href="https://unsplash.com/photos/silver-fork-and-knife-on-plate-fnztlIb52gU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+                </div>
                 <h3>No Meal Selected</h3>
                 <p>Please select a meal from the home page to view its details, or add a new meal to get started.</p>
                 <a href="index.html" class="btn btn-primary">Go to Home Page</a>
@@ -68,7 +73,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="modal-title">Edit Meal</h2>
-                <button id="close-modal" class="close-btn">&times;</button>
+                <button id="close-modal" class="close-btn" aria-label="Close modal">&times;</button>
             </div>
             <form id="meal-form" class="meal-form">
                 <div class="form-group">
