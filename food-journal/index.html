@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Journal</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="A food journal website to help you track your meals and improve your health.">
+    <meta name="author" content="Mikael Weiss">
+    <meta property="og:title" content="Food Journal">
+    <meta property="og:description" content="A food journal website to help you track your meals and improve your health.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mikaelweiss.github.io/wdd131/food-journal/index.html">
+    <meta property="og:image" content="https://mikaelweiss.github.io/wdd131/food-journal/images/logo.png">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <script type="module" src="main.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="images/logo.png" alt="Food Journal Logo" class="logo">
+                <h1>Food Journal</h1>
+                <nav>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="meals-section">
+            <div class="meals-header">
+                <h2>Your Meals</h2>
+                <div class="header-actions">
+                    <button id="add-meal-btn" class="btn btn-primary">Add Meal</button>
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Search meals...">
+                        <button id="search-btn" class="btn btn-secondary">🔍</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filters">
+                <button id="filter-all" class="filter-btn active">All</button>
+                <button id="filter-today" class="filter-btn">Today</button>
+                <button id="filter-week" class="filter-btn">This Week</button>
+            </div>
+
+            <div id="meals-list" class="meals-list">
+            </div>
+
+            <div id="no-meals" class="no-meals hidden">
+                <p>No meals found. Add your first meal above!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Food Journal. Track your meals, improve your health.</p>
+        </div>
+    </footer>
+
+    <div id="add-meal-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Add New Meal</h2>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <form id="meal-form" class="meal-form">
+                <div class="form-group">
+                    <label for="meal-title">Meal Title:</label>
+                    <input type="text" id="meal-title" name="meal-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="meal-date">Date:</label>
+                    <input type="date" id="meal-date" name="meal-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="meal-time">Time:</label>
+                    <input type="time" id="meal-time" name="meal-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="meal-description">Description:</label>
+                    <textarea id="meal-description" name="meal-description" rows="3" placeholder="What did you eat? How did you feel?"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="cancel-btn" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" id="submit-btn" class="btn btn-primary">Add Meal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
